@@ -8,8 +8,8 @@ Live demo: https://react-chat-express.herokuapp.com
 
 ## Running the back-end
 ```
-yarn install # 1. install the dependencies
-yarn dev # 2. run the project
+npm install # 1. install the dependencies
+npm run dev # 2. run the project
 ```
 To connect with your Mongo's database in development mode, you need to create a file called ```development.js``` inside ```config``` folder and put your Mongo's connection. E.g.:
 ```
@@ -21,18 +21,13 @@ module.exports = {
 ## Running the front-end
 ```
 cd client # 1. navigate into client's folder
-yarn install # 2. install the dependencies
-yarn start # 3. run the project
+npm install # 2. install the dependencies
+npm start # 3. run the project
 ```
 
-## Screenshots
-![Heroes Catalog](https://github.com/vctormb/react-express-chat/blob/master/docs/images/Login.png)
-![Heroes Catalog](https://github.com/vctormb/react-express-chat/blob/master/docs/images/Message.png)
-![Heroes Catalog](https://github.com/vctormb/react-express-chat/blob/master/docs/images/Message1to1.png)
-
 ## TODO
-- The back-end needs improvement
+- A mongodb schema with messages
 - Add “{user} is typing” functionality
-- Add authentication with token
+- Admin page
 - Add public channel for everyone
-- etc...
+

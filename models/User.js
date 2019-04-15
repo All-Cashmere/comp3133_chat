@@ -5,6 +5,7 @@ var Schema = mongoose.Schema;
 var userSchema = new Schema({
     socketId:  { type: String, required: true },
     nickname: String,
+    message: String,
     timestamp: { type : Date, default: Date.now }
 });
 

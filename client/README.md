@@ -2269,6 +2269,7 @@ netlify deploy
 Choose `build` as the path to deploy.
 
 **To setup continuous delivery:**
+//     {"start":"react-scripts start","build":"react-scripts build","test":"react-scripts test --env=jsdom","eject":"react-scripts eject"}
 
 With this setup Netlify will build and deploy when you push to git or open a pull request:
 

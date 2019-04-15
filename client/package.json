@@ -28,5 +28,8 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {},
-  "proxy": "http://localhost:5000"
+  "proxy": "http://localhost:5000",
+  "engines": {
+    "yarn": "YARN NO LONGER USED - use npm instead."
+  }
 }
