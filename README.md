@@ -5,6 +5,7 @@ Live demo: https://react-chat-express.herokuapp.com
 ```
 npm install # 1. install the dependencies
 npm run dev # 2. run the project
+npm run build
 ```
 
 ## Frontend
