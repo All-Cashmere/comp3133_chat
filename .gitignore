@@ -2,6 +2,3 @@
 
 # dependencies
 /node_modules
-
-# project folders
-/config/development.js
