@@ -71,62 +71,29 @@ const LoginButton = styled(Button)`
 	}
 `;
 
-class Login extends Component {
+class adminLogin extends Component {
 	state = {
-		nickname: '',
+        nickname: '',
+        password:''
 	}
 
-	componentDidMount() {
-		const { authReducer: { user, }, } = this.props;
-
-		if (user.isLoggedIn) {
-			this.redirectIfLoggedIn();
-		}
-
-		this.joinUserAfterLogin();
-	}
-
-	componentDidUpdate() {
-		const { authReducer: { user, }, } = this.props;
-
-		if (user.isLoggedIn) {
-			this.redirectIfLoggedIn();
-		}
-	}
-
-	redirectIfLoggedIn() {
-		const { history: { push }, } = this.props;
-
-		push('/chat');
-	}
 
 	login = () => {
-		const { nickname, } = this.state;
+        const { history: { push }, } = this.props;
 
-		this.props.dispatch({ type: LOGIN.REQUEST, });
-		socket.emit('join user', { nickname });
+		
+        if(this.state.nickname === 'admin' && this.state.password === 'password'){
+            push('/')
+        }
+
 	}
 
-	joinUserAfterLogin() {
-		socket.on('user joined', (data) => {
-			const { nickname, } = this.state;
-			
-			this.props.dispatch({
-				type: LOGIN.SUCCESS,
-				user: {
-					nickname,
-				},
-				onlineUsers: data.onlineUsers,
-			});
-		});
-	}
 
 	render() {
 		const { authReducer: { user } } = this.props;
 		const { nickname, } = this.state;
 
 		return (
-			
 			<FlexWrapper
 				justifyContent="center"
 				alignItems="center"
@@ -135,7 +102,7 @@ class Login extends Component {
 					p={40}
 				>
 					<InputLabel fontSize="0.75rem">
-						Nickname
+						Admin Login
 					</InputLabel>
 
 					<CustomInput
@@ -145,7 +112,13 @@ class Login extends Component {
 						borderRadius={3}
 						onChange={e => this.setState({ nickname: e.target.value })}
 					/>
-
+					<CustomInput
+						bg="rgba(0,0,0,.1)"
+						px={10}
+						mb={8}
+						borderRadius={3}
+						onChange={e => this.setState({ password: e.target.value })}
+					/>
 					<LoginButton
 						fontWeight={500}
 						fontSize="1rem"
@@ -165,4 +138,4 @@ const mapStateToProps = state => ({
 	authReducer: state.auth,
 });
 
-export default connect(mapStateToProps)(Login);
+export default connect(mapStateToProps)(adminLogin);

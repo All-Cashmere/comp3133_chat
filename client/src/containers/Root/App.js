@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, } from "react-router-dom";
-
+import { BrowserRouter as Router, Route, Link} from "react-router-dom";
+import adminLogin from '../../components/Admin/AdminLogin'
 // styled components
 import { injectGlobal } from 'styled-components';
 
@@ -42,7 +42,10 @@ class App extends Component {
 		return (
 			<Router>
 				<React.Fragment>
+					<Link to='/'>Main</Link>
+					<Link to='/admin'>Admin</Link>
 					<Route exact path="/" component={Login} />
+					<Route path='/admin' component={adminLogin}/>
 					<Route path="/login" component={Login} />
 					<PrivateRoute exact path="/chat/:id?" component={Wrapper} />
 				</React.Fragment>
