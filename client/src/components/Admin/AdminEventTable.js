@@ -7,14 +7,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-
-class EventTable extends React.Component{
-
-    state={
-        data:[]
-    }
-
-    styles = theme => ({
+const styles = theme => ({
     root: {
       width: '100%',
       marginTop: theme.spacing.unit * 3,
@@ -24,12 +17,18 @@ class EventTable extends React.Component{
       minWidth: 700,
     },
   });
+class EventTable extends React.Component{
+
+    state={
+        data:[]
+    }
   componentDidMount(){
 //get data from database here using axios
 //this.setState({data:???})
   }
   render(){
-      const { classes } = props;
+      const { classes } = this.props;
+      const {data} = this.state;
       return (
         <Paper className={classes.root}>
           <Table className={classes.table}>

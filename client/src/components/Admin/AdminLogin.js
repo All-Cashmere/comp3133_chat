@@ -83,7 +83,7 @@ class adminLogin extends Component {
 
 		
         if(this.state.nickname === 'admin' && this.state.password === 'password'){
-            push('/')
+            push('/admin')
         }
 
 	}
