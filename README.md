@@ -1,8 +1,3 @@
-## About the project
-I've created this chat based on Discord interface just for fun using styled components. The main goal of this project is to learn more about communicating users in real time using React and Socket.IO using Node Express.  
-
-Some cool patterns were used to organize the app's logic such as Redux, Context API and Render Props.
-
 Live demo: https://react-chat-express.herokuapp.com
 
 
